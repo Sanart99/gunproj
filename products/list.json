@@ -1,0 +1,8 @@
+{
+    "categories":[
+        {
+            "name":"guns",
+            "entries":[ "gun1", "gun2" ]
+        }
+    ]
+}
