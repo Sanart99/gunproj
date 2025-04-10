@@ -16,6 +16,7 @@
         <script src="components/inputs/baseFocusable.js"></script>
         <script src="components/buttons/button.js"></script>
         <script src="components/containers/modal.js"></script>
+        <script src="components/containers/quick-modal.js"></script>
         <script src="components/content/galleryItem.js" defer="true"></script>
         <script src="components/content/gallery.js" defer="true"></script>
         <script src="components/content/header.js" defer="true"></script>
@@ -23,10 +24,92 @@
     </head>
 
     <body>
+        <style>
+            #ageVerification {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 1em;
+            }
+            *::part(content) {
+                min-height: 21%;
+                width: 50%;
+            }
+            *::part(modal) {
+                backdrop-filter: blur(20px);
+            }
+            #ageVerification > p {
+                text-align: center;
+                margin: 0.5em 0px;
+            }
+            #ageVerification h1 {
+                font-size: 2em;
+                margin: 0.2em 0px 0em 0px;
+                text-align: center;
+            }
+            #ageVerification_buttonsDiv {
+                display: flex;
+                align-self: center;
+                gap: 3em;
+            }
+            c-button {
+                outline: 0;
+                background: black;
+                align-self: center;
+                height: 2.3em;
+                border-radius: 0.3em;
+                margin: 0px 0px 0.5em 0px;
+            }
+            #ageVerification_ok {
+                width: 25ch;
+                background: green;
+            }
+            #ageVerification_quit {
+                width: 9ch;
+                background: #d50d0d;
+            }
+            @media screen and (max-width: 800px) {
+                *::part(content) {
+                    width: 99%;
+                }
+            }
+            @media screen and (max-width: 500px) {
+                #ageVerification_buttonsDiv {
+                    flex-direction: column;
+                    gap: 0px;
+                }
+                #ageVerification_ok, #ageVerification_quit {
+                    width: 25ch;
+                }
+            }
+        </style>
+
         <c-homepage></c-homepage>
 
         <script>
-            
+            const bAge = sessionGet('age-verified');
+            if (bAge !== '1') {
+                const e = stringToNodes(`<c-quick-modal>
+                    <div id="ageVerification" slot="content">
+                        <h1>Age Verification</h1>
+                        <p>You must be at least 18 years old to enter.</p>
+                        <div id="ageVerification_buttonsDiv">
+                            <c-button id="ageVerification_ok" text="I am 18 years old or older."></c-button>
+                            <c-button id="ageVerification_quit" text="I am not."></c-button>
+                        </div>
+                    </div>
+                </c-quick-modal>`)[0];
+                e.querySelector('#ageVerification_ok').addEventListener('click',() => {
+                    sessionSet('age-verified','1');
+                    e.remove()
+                });
+                e.querySelector('#ageVerification_quit').addEventListener('click',() => {
+                    document.querySelector('c-homepage').remove();
+                    e.querySelector('#ageVerification p').innerText = "You are less than 18 years old, you can't navigate the website.";
+                    e.querySelector('#ageVerification_buttonsDiv').remove();
+                });
+                document.querySelector('body').appendChild(e);
+            }
         </script>
     </body>
 </html>
