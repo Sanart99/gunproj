@@ -10,8 +10,8 @@ class ModalElement extends BaseElement {
         this.addStyle(`
             :host {
                 position: fixed;
-                width: 100vw;
-                height: 100vh;
+                width: 100%;
+                height: 100%;
                 top: 0px;
                 left: 0px;
                 background: #00000055;
