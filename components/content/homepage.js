@@ -49,6 +49,7 @@ class HomepageElement extends BaseElement {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                width: 90%;
             }
             #productsDiv > p {
                 font-size: 3em;

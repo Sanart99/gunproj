@@ -5,11 +5,13 @@ class GalleryElement extends BaseElement {
         this.addStyle(`
             :host {
                 display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
+                flex-direction: column;
+                align-items: center;
             }
             c-gallery-item {
                 margin: 1em;
+                flex: 1 0 100%;
+                max-height: 25em;
             }
         `);
 
@@ -18,20 +20,13 @@ class GalleryElement extends BaseElement {
         `.trim()));
 
         fetch("products/list.json").then((res) => res.json()).then((json) => {
-            const categories = json?.categories;
-            if (categories == null) return;
-            for (const category of json.categories) {
-                const catName = category?.name;
-                const entries = category?.entries;
-                if (entries == null) continue;
+            const imgs = json?.gun_images;
+            if (imgs == null || !Array.isArray(imgs)) return;
 
-                for (let i=0; i<20; i++) for (const entry of entries) {
-                    fetch(`products/${catName}/entries/${entry}.json`).then((res) => res.json()).then((json) => {
-                        const e = new GalleryItemElement();
-                        e.load(catName,json);
-                        this.shadowRoot.appendChild(e);
-                    });
-                }
+            for (const img of imgs) {
+                const e = new GalleryItemElement();
+                e.load(img);
+                this.shadowRoot.append(e);
             }
         });
     }

@@ -1,8 +1,12 @@
 {
-    "categories":[
-        {
-            "name":"guns",
-            "entries":[ "gun1", "gun2" ]
-        }
+    "gun_images":[
+        "1Q0A1431.jpg",
+        "1Q0A1433.jpg",
+        "1Q0A1509.jpg",
+        "1Q0A1543.jpg",
+        "1Q0A1554.jpg",
+        "1Q0A1585.jpg",
+        "1Q0A1643.jpg"
+
     ]
 }
