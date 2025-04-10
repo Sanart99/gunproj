@@ -4,7 +4,7 @@ class QuickModalElement extends BaseElement {
 
         this.addStyle(`
             c-modal {
-                z-index: 1;
+                z-index: 20;
                 transition: unset;
             }
             slot[name="content"] {
