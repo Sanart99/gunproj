@@ -8,10 +8,6 @@ class HomepageElement extends BaseElement {
                 flex-direction: column;
                 align-items: center;
             }
-            c-modal {
-                z-index: 1;
-                transition: unset;
-            }
             c-header {
                 position: sticky;
                 top: 0px;
@@ -46,17 +42,10 @@ class HomepageElement extends BaseElement {
                 color: black;
             }
             #privacyPolicy {
-                background: white;
-                border: 4px solid black;
-                width: 75%;
-                max-width: 1000px;
-                min-height: 25%;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 gap: 1em;
-                font-size: 1.2em;
-                padding: 0.5em;
             }
             #privacyPolicy h1 {
                 font-size: 2em;
@@ -88,18 +77,17 @@ class HomepageElement extends BaseElement {
 
         const privPolicyLink = this.shadowRoot.querySelector('#privPolicyLink');
         privPolicyLink.addEventListener('click',() => {
-            const e = stringToNodes(`<c-modal>
+            const e = stringToNodes(`<c-quick-modal>
                 <div id="privacyPolicy" slot="content">
                     <h1>Privacy Policy</h1>
                     <p>This website displays an embedded Google Map. When you view the map, your browser may connect to Google servers and transmit certain technical data (such as your IP address). This interaction is governed by <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.<p>
                     <p><b>We do not collect, store, or process any personal data directly through this website.</b></p>
                     <c-button id="privacyPolicy_ok" text="Ok"></c-button>
                 </div>
-            </c-modal>`)[0];
+            </c-quick-modal>`)[0];
             e.querySelector('#privacyPolicy_ok').addEventListener('click',() => e.remove());
             this.shadowRoot.appendChild(e);
         });
-        console.log(this.shadowRoot);
     }
 }
 customElements.define("c-homepage", HomepageElement);
