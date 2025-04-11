@@ -15,7 +15,7 @@ class GalleryItemElement extends BaseElement {
                 max-width: 100%;
                 max-height: 100%;
                 width: 100%;
-                height: 400px;
+                height: 50px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -38,9 +38,10 @@ class GalleryItemElement extends BaseElement {
     }
 
     load(img) {
-        this.eImg.src = `products/images/${img}`;
+        const url = `products/images/${img}`;
+        this.eImg.src = url;
         this.eImg.addEventListener('click',() => {
-            location.href = `products/images/${img}`;
+            location.href = url;
         });
     }
 }

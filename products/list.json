@@ -1,12 +1,75 @@
 {
-    "gun_images":[
-        "1Q0A1431.jpg",
-        "1Q0A1433.jpg",
-        "1Q0A1509.jpg",
-        "1Q0A1543.jpg",
-        "1Q0A1554.jpg",
-        "1Q0A1585.jpg",
-        "1Q0A1643.jpg"
-
+    "categories":[
+        {
+            "name": "Design 1 - Aztec Design",
+            "filePaths":[
+                "design1/1Q0A1442.webp",
+                "design1/1Q0A1525.webp",
+                "design1/1Q0A1529.webp",
+                "design1/1Q0A1587.webp",
+                "design1/1Q0A1589.webp",
+                "design1/1Q0A1609.webp",
+                "design1/1Q0A1610.webp",
+                "design1/1Q0A1433.webp",
+                "design1/1Q0A1574.webp",
+                "design1/1Q0A1462.webp",
+                "design1/1Q0A1467.webp",
+                "design1/1Q0A1468.webp",
+                "design1/1Q0A1624.webp",
+                "design1/1Q0A1646.webp",
+                "design1/1Q0A1648.webp"
+            ]
+        },
+        {
+            "name": "Design 2 - Scroll Design",
+            "filePaths":[
+                "design2/1Q0A1532.webp",
+                "design2/1Q0A1537.webp",
+                "design2/1Q0A1578.webp",
+                "design2/1Q0A1593.webp",
+                "design2/1Q0A1594.webp",
+                "design2/1Q0A1603.webp",
+                "design2/1Q0A1618.webp",
+                "design2/1Q0A1431.webp",
+                "design2/1Q0A1595.webp",
+                "design2/1Q0A1620.webp",
+                "design2/1Q0A1641.webp"
+            ]
+        },
+        {
+            "name": "Design 3 - Filagree Design",
+            "filePaths":[
+                "design3/1Q0A1440.webp",
+                "design3/1Q0A1509.webp",
+                "design3/1Q0A1528.webp",
+                "design3/1Q0A1590.webp",
+                "design3/1Q0A1605.webp",
+                "design3/1Q0A1607.webp",
+                "design3/1Q0A1576.webp",
+                "design3/1Q0A1592.webp",
+                "design3/1Q0A1625.webp",
+                "design3/1Q0A1643.webp"
+            ]
+        },
+        {
+            "name": "Design 4 - Christian Design",
+            "filePaths":[
+                "design4/1Q0A1446.webp",
+                "design4/1Q0A1505.webp",
+                "design4/1Q0A1506.webp",
+                "design4/1Q0A1538.webp",
+                "design4/1Q0A1542.webp",
+                "design4/1Q0A1543.webp",
+                "design4/1Q0A1581.webp",
+                "design4/1Q0A1586.webp",
+                "design4/1Q0A1602.webp",
+                "design4/1Q0A1493.webp",
+                "design4/1Q0A1585.webp",
+                "design4/1Q0A1597.webp",
+                "design4/1Q0A1621.webp",
+                "design4/1Q0A1622.webp",
+                "design4/1Q0A1644.webp"
+            ]
+        }
     ]
 }
